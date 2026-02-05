@@ -58,18 +58,26 @@ function displayWinner() {
         return;
     }
 
+    // Main result display
     document.getElementById('winner-name').textContent = winner.name;
     document.getElementById('flat-number').textContent = flatNo;
     document.getElementById('winner-app-no').textContent = winner.applicationNo;
     document.getElementById('winner-category').textContent = winner.category;
 
-    // Set result date
+    // Certificate print fields
+    document.getElementById('cert-winner-name').textContent = winner.name;
+    document.getElementById('cert-flat-number').textContent = flatNo;
+    document.getElementById('cert-winner-app-no').textContent = winner.applicationNo;
+
+    // Dates
     const now = new Date();
-    document.getElementById('result-date').textContent = now.toLocaleDateString('en-IN', {
+    const dateStr = now.toLocaleDateString('en-IN', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
     });
+    document.getElementById('result-date').textContent = dateStr;
+    document.getElementById('cert-date').textContent = dateStr;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,4 +93,3 @@ document.addEventListener('DOMContentLoaded', function() {
         displayWinner();
     }
 });
-
