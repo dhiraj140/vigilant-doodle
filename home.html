@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flat Lottery System - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="data.js"></script>
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MHADA Flat Lottery – Demo Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div>
-                    <h1>Flat Lottery System</h1>
-                    <p class="subtitle">MHADA - Demonstration Portal</p>
-                </div>
-                <div class="header-right">
-                    <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
-                </div>
-            </div>
 
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="home.html" class="active">Home</a></li>
-                    <li><a href="index.html">Applicants</a></li>
-                    <li><a href="notice.html">Notices & Guidelines</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <div class="branding">
+        <h1>Flat Lottery System</h1>
+        <p class="tagline">MHADA – Demonstration Portal</p>
+      </div>
+      <div class="gov-mark">Government of Maharashtra</div>
+    </div>
 
-    <main class="container">
-        <section class="hero">
-            <h2>Welcome to MHADA Flat Lottery Demonstration System</h2>
-            <p class="lead">This is a static demonstration portal created for training, presentation, and educational purposes only.</p>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html" aria-current="page">Home</a></li>
+        <li><a href="applicants.html">Applicants</a></li>
+        <li><a href="notices.html">Notices & Guidelines</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="total-applicants-home">—</div>
-                    <div class="stat-label">Registered Applicants</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="total-flats-home">—</div>
-                    <div class="stat-label">Available Flats (Demo)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2026</div>
-                    <div class="stat-label">Simulation Year</div>
-                </div>
-            </div>
-        </section>
+<main class="container">
+  <section class="hero">
+    <h2>MHADA Flat Lottery Demonstration</h2>
+    <p class="lead">Educational / presentation-only simulator – no real allotments</p>
 
-        <section class="info-cards">
-            <div class="card">
-                <h3>Purpose of this Demo</h3>
-                <ul>
-                    <li>Showcase clean government-style UI/UX</li>
-                    <li>Demonstrate client-side random selection logic</li>
-                    <li>Printable winner certificate layout</li>
-                    <li>Static website – no backend, no database</li>
-                </ul>
-            </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-value" id="stats-applicants">—</div>
+        <div class="stat-label">Applicants</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="stats-flats">—</div>
+        <div class="stat-label">Available Flats</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">2026</div>
+        <div class="stat-label">Simulation Year</div>
+      </div>
+    </div>
+  </section>
 
-            <div class="card">
-                <h3>Important Reminder</h3>
-                <p class="important">This system has <strong>NO official value</strong>.</p>
-                <p>All data and results are fictional, randomly generated in the browser, and intended only for demonstration.</p>
-            </div>
-        </section>
+  <section class="features">
+    <div class="feature-card">
+      <h3>What This Demo Shows</h3>
+      <ul>
+        <li>Government-style clean interface</li>
+        <li>Client-side fair random draw</li>
+        <li>Printable winner certificate</li>
+        <li>100% static – GitHub Pages ready</li>
+      </ul>
+    </div>
+    <div class="feature-card warning">
+      <h3>Important</h3>
+      <p class="highlight">This simulation has <strong>no legal value</strong>.<br>All results are fictional and browser-generated only.</p>
+    </div>
+  </section>
 
-        <section class="cta-section">
-            <h3>Start Simulation</h3>
-            <a href="index.html" class="primary-btn large-btn">View Applicants & Run Lottery →</a>
-        </section>
-    </main>
+  <div class="cta">
+    <a href="applicants.html" class="btn btn-primary btn-large">View Applicants & Start Draw →</a>
+  </div>
+</main>
 
-    <footer>
-        <div class="container">
-            <p>This is a demonstration website for presentation and training purposes only.<br>All results are randomly generated using client-side JavaScript and have no legal or official standing.</p>
-            <p>© 2026 MHADA Flat Lottery Demo</p>
-        </div>
-    </footer>
+<footer class="site-footer">
+  <div class="container">
+    <p>Demonstration only • No official status • Results generated in browser</p>
+    <p>© 2026 MHADA Flat Lottery Demo</p>
+  </div>
+</footer>
+
 </body>
 </html>
