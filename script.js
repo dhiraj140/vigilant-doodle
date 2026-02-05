@@ -1,95 +1,97 @@
-// script.js - Client-side lottery logic
+// script.js
 
 function shuffle(array) {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    let current = array.length;
+    while (current !== 0) {
+        let random = Math.floor(Math.random() * current);
+        current--;
+        [array[current], array[random]] = [array[random], array[current]];
     }
-    return newArray;
+    return array;
 }
 
 function runLottery() {
     if (applicants.length === 0) {
-        alert("No applicants available");
+        alert("No applicants available.");
         return;
     }
 
-    const shuffled = shuffle(applicants);
+    const shuffled = shuffle([...applicants]);
     const winner = shuffled[0];
-    
+
     const flatIndex = Math.floor(Math.random() * availableFlats.length);
     const flatNo = availableFlats[flatIndex];
 
-    window.location.href = `result.html?winnerId=${winner.id}&flatNo=${encodeURIComponent(flatNo)}`;
+    const params = new URLSearchParams();
+    params.set("winnerId", winner.id);
+    params.set("flatNo", flatNo);
+
+    window.location.href = "result.html?" + params.toString();
 }
 
 function populateApplicantsTable() {
-    const tbody = document.getElementById('applicants-body');
+    const tbody = document.getElementById("applicants-body");
     if (!tbody) return;
 
-    tbody.innerHTML = '';
+    tbody.innerHTML = "";
 
-    applicants.forEach((app, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${index + 1}</td>
+    applicants.forEach((app, idx) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${idx + 1}</td>
             <td>${app.applicationNo}</td>
             <td>${app.name}</td>
             <td><span class="category-badge">${app.category}</span></td>
         `;
-        tbody.appendChild(row);
+        tbody.appendChild(tr);
     });
+
+    const totalEl = document.getElementById("total-applicants");
+    if (totalEl) totalEl.textContent = applicants.length;
+
+    const homeTotal = document.getElementById("total-applicants-home");
+    if (homeTotal) homeTotal.textContent = applicants.length;
+
+    const homeFlats = document.getElementById("total-flats-home");
+    if (homeFlats) homeFlats.textContent = availableFlats.length;
 }
 
-function displayWinner() {
+function showWinner() {
     const params = new URLSearchParams(window.location.search);
-    const winnerId = parseInt(params.get('winnerId'));
-    const flatNo = params.get('flatNo');
+    const id = parseInt(params.get("winnerId"));
+    const flat = params.get("flatNo");
 
-    if (!winnerId || !flatNo) {
-        document.getElementById('winner-name').textContent = "Error loading result";
+    if (!id || !flat) {
+        document.getElementById("winner-name").textContent = "Error loading result";
         return;
     }
 
-    const winner = applicants.find(a => a.id === winnerId);
+    const winner = applicants.find(a => a.id === id);
     if (!winner) {
-        document.getElementById('winner-name').textContent = "Winner data not found";
+        document.getElementById("winner-name").textContent = "Winner not found";
         return;
     }
 
-    // Main result display
-    document.getElementById('winner-name').textContent = winner.name;
-    document.getElementById('flat-number').textContent = flatNo;
-    document.getElementById('winner-app-no').textContent = winner.applicationNo;
-    document.getElementById('winner-category').textContent = winner.category;
+    document.getElementById("winner-name").textContent     = winner.name;
+    document.getElementById("flat-number").textContent     = flat;
+    document.getElementById("winner-app-no").textContent   = winner.applicationNo;
+    document.getElementById("winner-category").textContent = winner.category;
 
-    // Certificate print fields
-    document.getElementById('cert-winner-name').textContent = winner.name;
-    document.getElementById('cert-flat-number').textContent = flatNo;
-    document.getElementById('cert-winner-app-no').textContent = winner.applicationNo;
+    document.getElementById("cert-winner-name").textContent   = winner.name;
+    document.getElementById("cert-flat-number").textContent   = flat;
+    document.getElementById("cert-winner-app-no").textContent = winner.applicationNo;
 
-    // Dates
-    const now = new Date();
-    const dateStr = now.toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
+    const today = new Date().toLocaleDateString("en-IN", {
+        day: "numeric", month: "long", year: "numeric"
     });
-    document.getElementById('result-date').textContent = dateStr;
-    document.getElementById('cert-date').textContent = dateStr;
+    document.getElementById("result-date").textContent = today;
+    document.getElementById("cert-date").textContent   = today;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Populate applicant table if on index page
-    if (document.getElementById('applicants-body')) {
-        populateApplicantsTable();
-        const totalEl = document.getElementById('total-applicants');
-        if (totalEl) totalEl.textContent = applicants.length;
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    populateApplicantsTable();
 
-    // Display winner if on result page
-    if (document.getElementById('winner-name')) {
-        displayWinner();
+    if (document.getElementById("winner-name")) {
+        showWinner();
     }
 });
