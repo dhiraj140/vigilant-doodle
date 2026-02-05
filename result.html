@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Lottery System - Lottery Result</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>Flat Lottery System</h1>
+                    <p class="subtitle">MHADA - Demonstration Portal</p>
+                </div>
+                <div class="header-right">
+                    <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Lottery Result</h2>
+            <a href="index.html" class="back-link">← Back to Applicant List</a>
+        </div>
+
+        <div class="result-card">
+            <div class="result-header">
+                <div class="official-seal">OFFICIAL</div>
+                <h3>Lottery Winner</h3>
+            </div>
+            
+            <div class="winner-details">
+                <div class="winner-name" id="winner-name"></div>
+                
+                <div class="flat-info">
+                    <div class="flat-label">Allotted Flat</div>
+                    <div class="flat-number" id="flat-number"></div>
+                </div>
+
+                <div class="details-grid">
+                    <div>
+                        <span class="detail-label">Application Number</span>
+                        <span class="detail-value" id="winner-app-no"></span>
+                    </div>
+                    <div>
+                        <span class="detail-label">Category</span>
+                        <span class="detail-value" id="winner-category"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-footer">
+                <p><strong>Date:</strong> <span id="result-date"></span></p>
+                <p class="disclaimer">This result is generated randomly for demonstration purposes only. It does not constitute an official allotment.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This is a demonstration website for presentation purposes only. All results are randomly generated using client-side JavaScript and hold no official value.</p>
+            <p>&copy; 2026 MHADA Flat Lottery System Demo</p>
+        </div>
+    </footer>
+</body>
+</html>
