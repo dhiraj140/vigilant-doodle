@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flat Lottery System - Lottery Result</title>
+    <title>Flat Lottery System - Result</title>
     <link rel="stylesheet" href="style.css">
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,6 +20,14 @@
                     <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
                 </div>
             </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Applicants</a></li>
+                    <li><a href="notice.html">Notices & Guidelines</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -27,88 +35,87 @@
         <div class="page-header">
             <h2>Lottery Result</h2>
             <div class="header-actions">
-                <a href="index.html" class="back-link">← Back to Applicant List</a>
-                <button onclick="window.print()" class="print-btn">🖨️ Print Winner Receipt</button>
+                <a href="index.html" class="back-link">← Back to Applicants</a>
+                <button onclick="window.print()" class="print-btn">🖨️ Print Certificate</button>
             </div>
         </div>
 
         <div class="result-card">
             <div class="result-header">
                 <div class="official-seal">OFFICIAL</div>
-                <h3>Lottery Winner</h3>
+                <h3>Winner Announcement</h3>
             </div>
-            
+
             <div class="winner-details">
-                <div class="winner-name" id="winner-name"></div>
-                
+                <div class="winner-name" id="winner-name">—</div>
+
                 <div class="flat-info">
                     <div class="flat-label">Allotted Flat</div>
-                    <div class="flat-number" id="flat-number"></div>
+                    <div class="flat-number" id="flat-number">—</div>
                 </div>
 
                 <div class="details-grid">
                     <div>
-                        <span class="detail-label">Application Number</span>
-                        <span class="detail-value" id="winner-app-no"></span>
+                        <span class="detail-label">Application No.</span>
+                        <span class="detail-value" id="winner-app-no">—</span>
                     </div>
                     <div>
                         <span class="detail-label">Category</span>
-                        <span class="detail-value" id="winner-category"></span>
+                        <span class="detail-value" id="winner-category">—</span>
                     </div>
                 </div>
             </div>
 
             <div class="result-footer">
-                <p><strong>Date of Draw:</strong> <span id="result-date"></span></p>
-                <p class="disclaimer">This result is generated randomly for demonstration purposes only. It does not constitute an official allotment or legal document.</p>
+                <p><strong>Date:</strong> <span id="result-date">—</span></p>
+                <p class="disclaimer">Demonstration only – no legal value</p>
             </div>
         </div>
 
-        <!-- Print-optimized certificate content (hidden on screen, shown on print) -->
+        <!-- Print-only certificate -->
         <div class="print-certificate">
             <div class="cert-header">
                 <div class="cert-emblem">GOVERNMENT OF MAHARASHTRA</div>
                 <h1 class="cert-title">MHADA FLAT LOTTERY WINNER CERTIFICATE</h1>
-                <p class="cert-subtitle">Demonstration / Presentation Copy</p>
+                <p class="cert-subtitle">Demonstration Copy – Not Official</p>
             </div>
 
             <div class="cert-body">
                 <p class="cert-text">This is to certify that</p>
-                <h2 class="cert-winner" id="cert-winner-name"></h2>
+                <h2 class="cert-winner" id="cert-winner-name">—</h2>
                 <p class="cert-text">bearing Application Number</p>
-                <h3 class="cert-appno" id="cert-winner-app-no"></h3>
-                <p class="cert-text">has been declared the winner in the Flat Lottery Draw and is hereby allotted the following flat:</p>
+                <h3 class="cert-appno" id="cert-winner-app-no">—</h3>
+                <p class="cert-text">has been selected as the winner in this demonstration lottery and is allotted:</p>
 
                 <div class="cert-flat-box">
                     <div class="cert-flat-label">Flat Number</div>
-                    <div class="cert-flat-value" id="cert-flat-number"></div>
+                    <div class="cert-flat-value" id="cert-flat-number">—</div>
                 </div>
 
                 <p class="cert-text cert-date-line">
-                    Dated this <span id="cert-date"></span> at Mumbai.
+                    Issued on <span id="cert-date">—</span> (for demonstration purposes only)
                 </p>
             </div>
 
             <div class="cert-footer">
                 <div class="cert-sign">
                     <div class="sign-line"></div>
-                    <p>Authorised Signatory</p>
-                    <p>(For Demonstration Purposes Only)</p>
+                    <p>Authorised Signatory (Demo)</p>
                 </div>
                 <div class="cert-seal">MHADA</div>
             </div>
 
             <p class="cert-disclaimer-print">
-                This document is generated by client-side JavaScript for demonstration only.<br>
-                Not valid for any official claim or legal purpose.
+                This certificate is generated by client-side JavaScript for demonstration only.<br>
+                It holds no legal, financial or official value whatsoever.
             </p>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>This is a demonstration website for presentation purposes only. All results are randomly generated using client-side JavaScript and hold no official value.</p>
-            <p>© 2026 MHADA Flat Lottery System Demo</p>
+            <p>This is a demonstration website for presentation and training purposes only.<br>All results are randomly generated using client-side JavaScript and have no legal or official standing.</p>
+            <p>© 2026 MHADA Flat Lottery Demo</p>
         </div>
     </footer>
 </body>
