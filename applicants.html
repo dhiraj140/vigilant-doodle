@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MHADA Flat Lottery – Applicants</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="data.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <div class="branding">
+        <h1>Flat Lottery System</h1>
+        <p class="tagline">MHADA – Demonstration Portal</p>
+      </div>
+      <div class="gov-mark">Government of Maharashtra</div>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="applicants.html" aria-current="page">Applicants</a></li>
+        <li><a href="notices.html">Notices & Guidelines</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-header">
+    <h2>Registered Applicants</h2>
+    <div class="stats">Total: <strong id="total-applicants">—</strong></div>
+  </div>
+
+  <div class="card table-card">
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Application No.</th>
+            <th>Name</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody id="applicant-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="draw-section">
+    <button type="button" class="btn btn-primary btn-large" onclick="runLottery()">
+      Run Lottery Draw
+    </button>
+    <p class="hint">(Client-side random selection – one winner only)</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Demonstration only • No official status • Results generated in browser</p>
+    <p>© 2026 MHADA Flat Lottery Demo</p>
+  </div>
+</footer>
+
+</body>
+</html>
