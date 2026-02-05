@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flat Lottery System - Applicant List</title>
+    <title>Flat Lottery System - Applicants</title>
     <link rel="stylesheet" href="style.css">
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,6 +20,14 @@
                     <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
                 </div>
             </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html" class="active">Applicants</a></li>
+                    <li><a href="notice.html">Notices & Guidelines</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -27,7 +35,7 @@
         <div class="page-header">
             <h2>Registered Applicants</h2>
             <div class="stats">
-                <span>Total Applicants: <strong id="total-applicants">0</strong></span>
+                <span>Total: <strong id="total-applicants">0</strong></span>
             </div>
         </div>
 
@@ -51,14 +59,14 @@
             <button onclick="runLottery()" class="primary-btn">
                 Conduct Lottery Draw
             </button>
-            <p class="note">This will randomly select one winner and allot a flat</p>
+            <p class="note">This action randomly selects one winner (client-side only)</p>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>This is a demonstration website for presentation purposes only. All results are randomly generated using client-side JavaScript and hold no official value.</p>
-            <p>&copy; 2026 MHADA Flat Lottery System Demo</p>
+            <p>This is a demonstration website for presentation and training purposes only.<br>All results are randomly generated using client-side JavaScript and have no legal or official standing.</p>
+            <p>© 2026 MHADA Flat Lottery Demo</p>
         </div>
     </footer>
 </body>
