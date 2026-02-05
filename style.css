@@ -1,182 +1,534 @@
-/* ── Print Receipt / Certificate ─────────────────────────────────────── */
+/* style.css */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background:#f8f9fa;
+    color:#212529;
+    line-height:1.6;
+}
+
+.container {
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+header {
+    background:#002244;
+    color:white;
+    padding:1.5rem 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+h1 {
+    font-size:2.1rem;
+    margin-bottom:0.3rem;
+}
+
+.subtitle {
+    opacity:0.9;
+    font-size:1.05rem;
+}
+
+.gov-badge {
+    background:#ffcc00;
+    color:#002244;
+    padding:0.4rem 0.9rem;
+    border-radius:4px;
+    font-weight:700;
+    font-size:0.9rem;
+}
+
+.main-nav {
+    margin-top:1.2rem;
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:1rem;
+}
+
+.main-nav ul {
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:2.2rem;
+    flex-wrap:wrap;
+}
+
+.main-nav a {
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    padding:0.5rem 1rem;
+    border-radius:6px;
+    transition:0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background:rgba(255,255,255,0.18);
+}
+
+main.container {
+    padding:2.5rem 0 4rem;
+}
+
+.page-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1.5rem;
+    margin-bottom:2rem;
+}
+
+.page-header h2 {
+    color:#002244;
+    font-size:1.9rem;
+}
+
+.stats, .header-actions {
+    display:flex;
+    align-items:center;
+    gap:1.2rem;
+}
+
+.card {
+    background:white;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.07);
+    padding:1.8rem;
+    margin-bottom:2rem;
+}
+
+.table-container {
+    overflow-x:auto;
+}
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:680px;
+}
+
+th, td {
+    padding:14px 16px;
+    text-align:left;
+    border-bottom:1px solid #e9ecef;
+}
+
+th {
+    background:#f1f3f5;
+    font-weight:600;
+    color:#495057;
+    text-transform:uppercase;
+    font-size:0.88rem;
+    letter-spacing:0.4px;
+}
+
+tr:hover {
+    background:#f9fbfd;
+}
+
+.category-badge {
+    background:#e3f2fd;
+    color:#1565c0;
+    padding:5px 12px;
+    border-radius:1rem;
+    font-size:0.9rem;
+}
+
+.action-section {
+    text-align:center;
+    margin:3rem 0;
+}
+
+.primary-btn {
+    background:#002244;
+    color:white;
+    border:none;
+    padding:1rem 2.8rem;
+    font-size:1.15rem;
+    font-weight:600;
+    border-radius:6px;
+    cursor:pointer;
+    transition:all 0.2s;
+}
+
+.primary-btn:hover {
+    background:#003366;
+    transform:translateY(-1px);
+}
+
+.large-btn {
+    padding:1.3rem 3.2rem;
+    font-size:1.3rem;
+}
+
+.note {
+    margin-top:1.2rem;
+    color:#6c757d;
+    font-style:italic;
+}
+
+.hero {
+    text-align:center;
+    padding:5rem 1rem 4rem;
+    background:linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius:12px;
+    margin-bottom:3rem;
+}
+
+.hero h2 {
+    font-size:2.6rem;
+    color:#002244;
+    margin-bottom:1.2rem;
+}
+
+.lead {
+    font-size:1.3rem;
+    color:#495057;
+    max-width:800px;
+    margin:0 auto 3rem;
+}
+
+.hero-stats {
+    display:flex;
+    justify-content:center;
+    gap:2.5rem;
+    flex-wrap:wrap;
+}
+
+.stat-card {
+    background:white;
+    padding:1.8rem 3rem;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    min-width:200px;
+    text-align:center;
+}
+
+.stat-number {
+    font-size:3.2rem;
+    font-weight:700;
+    color:#002244;
+}
+
+.stat-label {
+    margin-top:0.7rem;
+    color:#6c757d;
+    font-weight:500;
+}
+
+.info-cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+    gap:2rem;
+    margin-bottom:3.5rem;
+}
+
+.cta-section {
+    text-align:center;
+    padding:4rem 1rem;
+    background:#002244;
+    color:white;
+    border-radius:12px;
+}
+
+.cta-section h3 {
+    font-size:2rem;
+    margin-bottom:1.8rem;
+}
+
+/* Result page */
+.result-card {
+    background:white;
+    max-width:720px;
+    margin:0 auto 3rem;
+    border-radius:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+    overflow:hidden;
+    border:1px solid #e0e0e0;
+}
+
+.result-header {
+    background:linear-gradient(135deg, #002244, #004080);
+    color:white;
+    padding:2rem;
+    text-align:center;
+    position:relative;
+}
+
+.official-seal {
+    position:absolute;
+    top:25px;
+    right:35px;
+    background:#ffcc00;
+    color:#002244;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:1rem;
+    transform:rotate(10deg);
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    border:3px solid white;
+}
+
+.winner-details {
+    padding:3rem 2.5rem;
+    text-align:center;
+}
+
+.winner-name {
+    font-size:3.2rem;
+    font-weight:700;
+    color:#002244;
+    margin-bottom:1.8rem;
+    line-height:1.1;
+}
+
+.flat-info {
+    margin:2.5rem 0;
+}
+
+.flat-label {
+    font-size:1.2rem;
+    color:#6c757d;
+    margin-bottom:0.6rem;
+}
+
+.flat-number {
+    font-size:4rem;
+    font-weight:800;
+    color:#006400;
+    letter-spacing:3px;
+}
+
+.details-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    max-width:500px;
+    margin:2.5rem auto 0;
+    text-align:left;
+}
+
+.detail-label {
+    display:block;
+    font-size:1rem;
+    color:#6c757d;
+    margin-bottom:0.4rem;
+}
+
+.detail-value {
+    font-size:1.3rem;
+    font-weight:600;
+}
+
+.result-footer {
+    background:#f8f9fa;
+    padding:1.8rem;
+    border-top:1px solid #dee2e6;
+    text-align:center;
+    font-size:1rem;
+    color:#495057;
+}
+
+.back-link {
+    color:#002244;
+    font-weight:500;
+    text-decoration:none;
+}
+
+.back-link:hover { text-decoration:underline; }
 
 .print-btn {
-    background: #006400;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 1rem;
+    background:#006400;
+    color:white;
+    border:none;
+    padding:0.9rem 1.8rem;
+    font-size:1.05rem;
+    border-radius:6px;
+    cursor:pointer;
 }
 
-.print-btn:hover {
-    background: #004d00;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-/* Hidden on screen, visible on print */
+/* Print certificate */
 .print-certificate {
-    display: none;
+    display:none;
 }
 
 @media print {
-    header, footer, .page-header, .result-card, .action-section, .note {
-        display: none !important;
+    header, footer, .page-header, .result-card, .action-section {
+        display:none !important;
     }
 
     body {
-        background: white;
-        color: black;
+        background:white;
     }
 
     .print-certificate {
-        display: block !important;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    .container {
-        max-width: none;
-        padding: 0;
+        display:block !important;
     }
 
     .cert-header {
-        text-align: center;
-        border-bottom: 3px solid #002244;
-        padding-bottom: 1.5rem;
-        margin-bottom: 2rem;
+        text-align:center;
+        border-bottom:4px solid #002244;
+        padding-bottom:2rem;
+        margin-bottom:3rem;
     }
 
     .cert-emblem {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #002244;
-        letter-spacing: 1px;
+        font-size:1.6rem;
+        font-weight:700;
+        color:#002244;
     }
 
     .cert-title {
-        font-size: 2.2rem;
-        margin: 0.8rem 0 0.4rem;
-        color: #002244;
+        font-size:2.6rem;
+        margin:1rem 0 0.5rem;
+        color:#002244;
     }
 
     .cert-subtitle {
-        font-size: 1.1rem;
-        color: #444;
-        font-style: italic;
+        font-size:1.3rem;
+        color:#555;
+        font-style:italic;
     }
 
     .cert-body {
-        text-align: center;
-        font-size: 1.15rem;
-        line-height: 1.8;
-        margin: 2rem 0;
-    }
-
-    .cert-text {
-        margin: 1rem 0;
+        text-align:center;
+        font-size:1.3rem;
+        line-height:2;
     }
 
     .cert-winner {
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: #002244;
-        margin: 0.8rem 0;
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 0.5rem;
-        display: inline-block;
+        font-size:3rem;
+        font-weight:700;
+        color:#002244;
+        margin:1.2rem 0;
+        border-bottom:3px solid #ccc;
+        padding-bottom:0.8rem;
+        display:inline-block;
     }
 
     .cert-appno {
-        font-size: 1.6rem;
-        font-weight: 600;
-        color: #333;
-        margin: 0.6rem 0 1.8rem;
+        font-size:1.9rem;
+        font-weight:600;
+        margin:1rem 0 2.5rem;
     }
 
     .cert-flat-box {
-        background: #f8f9fa;
-        border: 2px dashed #002244;
-        padding: 1.5rem;
-        margin: 2rem auto;
-        max-width: 500px;
+        border:3px dashed #002244;
+        padding:2rem;
+        margin:3rem auto;
+        max-width:600px;
     }
 
     .cert-flat-label {
-        font-size: 1.3rem;
-        color: #444;
-        margin-bottom: 0.6rem;
+        font-size:1.5rem;
+        margin-bottom:1rem;
     }
 
     .cert-flat-value {
-        font-size: 3rem;
-        font-weight: 800;
-        color: #006400;
-        letter-spacing: 4px;
-    }
-
-    .cert-date-line {
-        font-size: 1.2rem;
-        margin-top: 3rem;
+        font-size:4.5rem;
+        font-weight:900;
+        color:#006400;
+        letter-spacing:6px;
     }
 
     .cert-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 4rem;
-        border-top: 1px solid #aaa;
-        padding-top: 2rem;
+        display:flex;
+        justify-content:space-between;
+        margin-top:6rem;
+        border-top:2px solid #777;
+        padding-top:3rem;
     }
 
     .cert-sign {
-        text-align: center;
-        width: 45%;
+        text-align:center;
+        width:45%;
     }
 
     .sign-line {
-        width: 80%;
-        height: 2px;
-        background: #333;
-        margin: 0 auto 0.8rem;
+        height:3px;
+        background:#333;
+        margin:0 auto 1.5rem;
+        width:70%;
     }
 
     .cert-seal {
-        width: 140px;
-        height: 140px;
-        border: 4px solid #002244;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #002244;
-        transform: rotate(-8deg);
-        background: rgba(255, 204, 0, 0.15);
+        width:160px;
+        height:160px;
+        border:5px solid #002244;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:2.2rem;
+        font-weight:700;
+        color:#002244;
+        transform:rotate(-10deg);
     }
 
     .cert-disclaimer-print {
-        text-align: center;
-        font-size: 0.9rem;
-        color: #555;
-        margin-top: 3rem;
-        border-top: 1px solid #ccc;
-        padding-top: 1rem;
+        text-align:center;
+        margin-top:5rem;
+        font-size:1rem;
+        color:#555;
+        border-top:1px solid #aaa;
+        padding-top:2rem;
     }
 
     @page {
         size: A4;
-        margin: 1.5cm;
+        margin: 1.8cm;
     }
+}
+
+/* Notices page extras */
+.notice-card h3 {
+    color:#002244;
+    border-bottom:3px solid #dee2e6;
+    padding-bottom:0.8rem;
+    margin-bottom:1.2rem;
+}
+
+.important {
+    font-weight:700;
+    color:#c92a2a;
+    font-size:1.2rem;
+    margin:1.2rem 0;
+}
+
+.warning {
+    background:#fff5f5;
+    border-left:6px solid #c92a2a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content { flex-direction:column; text-align:center; }
+    .main-nav ul { gap:1.2rem; }
+    .hero h2 { font-size:2.2rem; }
+    .hero-stats { flex-direction:column; }
+    .info-cards { grid-template-columns:1fr; }
+    .winner-name { font-size:2.4rem; }
+    .flat-number { font-size:3rem; }
+    .details-grid { grid-template-columns:1fr; }
 }
