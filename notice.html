@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Lottery System - Notices</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>Flat Lottery System</h1>
+                    <p class="subtitle">MHADA - Demonstration Portal</p>
+                </div>
+                <div class="header-right">
+                    <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Applicants</a></li>
+                    <li><a href="notice.html" class="active">Notices & Guidelines</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Notices & Important Guidelines</h2>
+        </div>
+
+        <div class="card notice-card">
+            <h3>1. Nature of this Website</h3>
+            <p class="important">This is a **static demonstration** built for educational and presentation purposes only.</p>
+            <p>No real MHADA lottery is being conducted. No housing units are being allotted.</p>
+        </div>
+
+        <div class="card notice-card">
+            <h3>2. How the Demo Lottery Works</h3>
+            <ul>
+                <li>Data stored in plain JavaScript file (<code>data.js</code>)</li>
+                <li>Fisher-Yates shuffle → random winner selection</li>
+                <li>Random flat assignment from demo list</li>
+                <li>Result passed via URL parameters (no storage)</li>
+                <li>Printable layout simulated using CSS @media print</li>
+            </ul>
+        </div>
+
+        <div class="card notice-card warning">
+            <h3>3. Legal Disclaimer</h3>
+            <p class="important">ALL CONTENT AND RESULTS GENERATED HERE HAVE <strong>ZERO LEGAL VALUE</strong>.</p>
+            <p>Do not treat this simulation as an official document, allotment letter, or proof of any kind.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This is a demonstration website for presentation and training purposes only.<br>All results are randomly generated using client-side JavaScript and have no legal or official standing.</p>
+            <p>© 2026 MHADA Flat Lottery Demo</p>
+        </div>
+    </footer>
+</body>
+</html>
