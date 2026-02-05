@@ -1,0 +1,321 @@
+/* style.css - Professional Government-style design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #002244;
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.gov-badge {
+    background: #ffcc00;
+    color: #002244;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h2 {
+    font-size: 1.75rem;
+    color: #002244;
+}
+
+.stats {
+    font-size: 1.1rem;
+    background: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+th {
+    background: #f1f3f5;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+.category-badge {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.action-section {
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.primary-btn {
+    background: #002244;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 34, 68, 0.25);
+}
+
+.primary-btn:hover {
+    background: #003366;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 34, 68, 0.3);
+}
+
+.note {
+    margin-top: 1rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.result-card {
+    background: white;
+    max-width: 680px;
+    margin: 0 auto 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.result-header {
+    background: linear-gradient(135deg, #002244, #004080);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.official-seal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: #ffcc00;
+    color: #002244;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transform: rotate(12deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 3px solid #fff;
+}
+
+.result-header h3 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.winner-details {
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.winner-name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #002244;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.flat-info {
+    margin: 2rem 0;
+}
+
+.flat-label {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.flat-number {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #006400;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.result-footer {
+    background: #f8f9fa;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+.result-footer p {
+    margin-bottom: 0.75rem;
+}
+
+.back-link {
+    color: #002244;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #212529;
+    color: #adb5bd;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .winner-name {
+        font-size: 2.2rem;
+    }
+    
+    .flat-number {
+        font-size: 2.5rem;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+    }
+}
