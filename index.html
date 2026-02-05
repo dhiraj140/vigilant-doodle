@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Lottery System - Applicant List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>Flat Lottery System</h1>
+                    <p class="subtitle">MHADA - Demonstration Portal</p>
+                </div>
+                <div class="header-right">
+                    <span class="gov-badge">GOVERNMENT OF MAHARASHTRA</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Registered Applicants</h2>
+            <div class="stats">
+                <span>Total Applicants: <strong id="total-applicants">0</strong></span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Application No.</th>
+                            <th>Applicant's Name</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicants-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <button onclick="runLottery()" class="primary-btn">
+                Conduct Lottery Draw
+            </button>
+            <p class="note">This will randomly select one winner and allot a flat</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This is a demonstration website for presentation purposes only. All results are randomly generated using client-side JavaScript and hold no official value.</p>
+            <p>&copy; 2026 MHADA Flat Lottery System Demo</p>
+        </div>
+    </footer>
+</body>
+</html>
